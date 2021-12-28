@@ -9,7 +9,7 @@
   "scripts": {
     "test": "npm run build:ts && tsc -p test/tsconfig.test.json && tap test/**/*.test.ts",
     "start": "npm run build:ts && fastify start -l info -p process.env.PORT dist/app.js",
-    "start:heroku": "fastify start -l  info -p process.env.PORT dist/app.js",
+    "start:heroku": "fastify start -l  info -p process.env.PORT -a process.env.HOST dist/app.js",
     "build:ts": "tsc",
     "dev": "tsc && concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\"  \"tsc -w\" \"fastify start -w -l info -P dist/app.js\""
   },
