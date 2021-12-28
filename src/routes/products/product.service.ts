@@ -5,7 +5,6 @@ export default class ProductService {
   products = products;
 
   getProducts = () => {
-    console.log('');
     return [...this.products]
   }
 }
