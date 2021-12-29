@@ -28,7 +28,6 @@ const app: FastifyPluginAsync<AppOptions> = async (
     dir: join(__dirname, 'routes'),
     indexPattern: new RegExp('.route.js'),
     ignorePattern: /.*.js/,
-
     options: {
       indexPattern: new RegExp('.route.js'),
 

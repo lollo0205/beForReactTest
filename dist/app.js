@@ -13,9 +13,6 @@ const app = async (fastify, opts) => {
         dir: (0, path_1.join)(__dirname, 'routes'),
         indexPattern: new RegExp('.route.js'),
         ignorePattern: /.*.js/,
-        options: {
-            indexPattern: new RegExp('.route.js'),
-        }
     });
 };
 exports.app = app;
