@@ -3,7 +3,6 @@ import { model, Schema } from "mongoose";
 export const ProductsEntitySchema = new Schema(
   {
     type: { type: Schema.Types.ObjectId, ref: 'type_products' },
-    type2: { type: Schema.Types.ObjectId, ref: 'type_products' },
     image: { type: String, required: true },
     price: { type: String, required: true },
     name: { type: String, required: true },

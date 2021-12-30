@@ -2,7 +2,6 @@ import { join } from 'path';
 import AutoLoad, { AutoloadPluginOptions } from 'fastify-autoload';
 import { FastifyPluginAsync } from 'fastify';
 import { connect } from 'mongoose';
-console.log(process.env.MONGODB_URL_CONNECTION)
 export type AppOptions = {
   // Place your custom options for app below here.
 } & Partial<AutoloadPluginOptions>;
