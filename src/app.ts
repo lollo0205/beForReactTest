@@ -1,7 +1,7 @@
 import { join } from 'path';
 import AutoLoad, { AutoloadPluginOptions } from 'fastify-autoload';
 import { FastifyPluginAsync } from 'fastify';
-console.log();
+import { connect } from 'mongoose';
 export type AppOptions = {
   // Place your custom options for app below here.
 } & Partial<AutoloadPluginOptions>;
@@ -11,9 +11,8 @@ const app: FastifyPluginAsync<AppOptions> = async (
   opts
 ): Promise<void> => {
   // Place here your custom code!
-
+  const db = await connect(process.env.MONGODB_URL_CONNECTION || '');
   // Do not touch the following lines
-
   // This loads all plugins defined in plugins
   // those should be support plugins that are reused
   // through your application
@@ -33,6 +32,12 @@ const app: FastifyPluginAsync<AppOptions> = async (
 
     }
   })
+  process.on('exit', async () => {
+    fastify.log.info('About to exit');
+    await db.disconnect();
+    fastify.log.info('disconnect to mongoose');
+    process.exit();
+  });
 };
 
 export default app;

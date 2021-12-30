@@ -4,7 +4,7 @@ exports.productFindIdSchema = void 0;
 exports.productFindIdSchema = {
     schema: {
         params: {
-            productId: { type: 'number' }
+            productId: { type: 'string' }
         },
     },
 };
