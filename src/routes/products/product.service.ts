@@ -1,10 +1,10 @@
-import { products } from "./products.mock";
+// import { products } from "./products.mock";
 
-export default class ProductService {
+// export default class ProductService {
 
-  products = products;
+//   products = products;
 
-  getProducts = () => {
-    return [...this.products]
-  }
-}
+//   getProducts = () => {
+//     return [...this.products]
+//   }
+// }
