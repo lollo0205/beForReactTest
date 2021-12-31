@@ -1,18 +1,13 @@
-import { FastifyInstance, FastifyPluginAsync, FastifyRequest } from "fastify"
-import { productFindIdSchema } from "./products.chema";
-import { Product } from "./products.mongoose";
+import { FastifyInstance, FastifyPluginAsync } from "fastify"
+import ProductController from "./product.controller";
+import ProductSchema from "./products.chema";
+
+const productController = new ProductController()
+const productSchema = new ProductSchema();
 const products: FastifyPluginAsync = async (fastify: FastifyInstance, opts): Promise<void> => {
-  fastify.get('/', async (request, reply) => {
-    // return productService.getProducts();
-    return await Product.find().populate(['type']);
-  })
-  fastify.post('/', async (request, reply) => {
-    return true;
-  })
-  fastify.get('/:productId', productFindIdSchema, async (request: FastifyRequest<{ Params: { productId: string } }>, reply) => {
-    const { productId } = request.params;
-    return await Product.find({ _id: productId }).populate(['type']);
-  })
+  fastify.get('/', { schema: productSchema.getAllProductSchema() }, productController.getAllProducts)
+  fastify.post('/', { schema: productSchema.createProductSchema() }, productController.createProduct)
+  fastify.get('/:productId', { schema: productSchema.productFindIdSchema() }, productController.getProductById)
 }
 
 export default products;

@@ -1,17 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const product_controller_1 = require("./product.controller");
 const products_chema_1 = require("./products.chema");
-const products_mongoose_1 = require("./products.mongoose");
+const productController = new product_controller_1.default();
+const productSchema = new products_chema_1.default();
 const products = async (fastify, opts) => {
-    fastify.get('/', async (request, reply) => {
-        return await products_mongoose_1.Product.find().populate(['type']);
-    });
-    fastify.post('/', async (request, reply) => {
-        return true;
-    });
-    fastify.get('/:productId', products_chema_1.productFindIdSchema, async (request, reply) => {
-        const { productId } = request.params;
-        return await products_mongoose_1.Product.find({ _id: productId }).populate(['type']);
-    });
+    fastify.get('/', { schema: productSchema.getAllProductSchema() }, productController.getAllProducts);
+    fastify.post('/', { schema: productSchema.createProductSchema() }, productController.createProduct);
+    fastify.get('/:productId', { schema: productSchema.productFindIdSchema() }, productController.getProductById);
 };
 exports.default = products;
