@@ -31,9 +31,6 @@ class ProductController {
             writable: true,
             value: async (request, reply) => {
                 const productInserted = await this.productServie.createProduct(request.body);
-                request.log.debug('dio cane');
-                request.log.debug(productInserted._id);
-                request.log.info(await this.productServie.getProductById(productInserted._id));
                 return this.productServie.getProductById(productInserted._id);
             }
         });

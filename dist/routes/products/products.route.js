@@ -7,5 +7,6 @@ const productSchema = new products_chema_1.default();
 const products = async (fastify, opts) => {
     fastify.get('/', { schema: productSchema.getAllProductSchema() }, productController.getAllProducts);
     fastify.post('/', { schema: productSchema.createProductSchema() }, productController.createProduct);
+    fastify.get('/:productId', { schema: productSchema.productFindIdSchema() }, productController.getProductById);
 };
 exports.default = products;
