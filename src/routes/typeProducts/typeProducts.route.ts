@@ -5,11 +5,8 @@ const typeProducts: FastifyPluginAsync = async (fastify: FastifyInstance, opts):
   fastify.get('/', async (request, reply) => {
     return await TypeProducts.find();
   })
-  fastify.post('/', async (request, reply) => {
-    const tp = [{ name: 'cpu' }, { name: 'motherboard' }, { name: 'ram' }]
-    for (const obj of tp) {
-      await TypeProducts.create(obj);
-    }
+  fastify.post('/', async ({ body }, reply) => {
+    await TypeProducts.create(body);
     return true;
   })
 }
