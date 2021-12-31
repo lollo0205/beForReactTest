@@ -1,6 +1,6 @@
-import { FastifyRequest, FastifyReply } from "fastify";
-import { IGetProductByIdRequest, ICreateProductRequest } from "./interfaces/FastifyRequest/request.interface";
-import ProductService from "./product.service";
+import { FastifyRequest, FastifyReply } from 'fastify';
+import { IGetProductByIdRequest, ICreateProductRequest } from './interfaces/FastifyRequest/request.interface';
+import ProductService from './product.service';
 export default class ProductController {
     private productServie;
     constructor(productServie?: ProductService);

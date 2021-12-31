@@ -10,6 +10,8 @@
     "test": "npm run build:ts && tsc -p test/tsconfig.test.json && tap test/**/*.test.ts",
     "start": "npm run build:ts && fastify start -l info -p process.env.PORT dist/app.js",
     "start:heroku": "fastify start -l  info -p process.env.PORT -a '0.0.0.0' dist/app.js",
+    "lint": "tsc --noEmit && eslint --ext .js,.jsx,.ts,.tsx ./src",
+    "lint:fix": "tsc --noEmit && eslint --ext .js,.jsx,.ts,.tsx ./src --fix",
     "build:ts": "tsc",
     "dev": "tsc && concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\"  \"tsc -w\" \"fastify start -w -l info -P dist/app.js\""
   },
@@ -28,7 +30,10 @@
   "devDependencies": {
     "@types/node": "^14.14.14",
     "@types/tap": "^14.10.1",
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
     "concurrently": "^6.0.0",
+    "eslint": "^8.5.0",
     "fastify-tsconfig": "^1.0.1",
     "tap": "^14.11.0",
     "typescript": "^4.1.3"

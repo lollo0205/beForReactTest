@@ -1,4 +1,4 @@
-import { model, Schema } from "mongoose";
+import { model, Schema } from 'mongoose';
 
 export const ProductsEntitySchema = new Schema(
   {
@@ -8,6 +8,6 @@ export const ProductsEntitySchema = new Schema(
     name: { type: String, required: true },
     qtaStock: { type: Number, required: true }
   }
-)
+);
 
-export const Product = model('products', ProductsEntitySchema)
+export const Product = model('products', ProductsEntitySchema);

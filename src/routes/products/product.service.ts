@@ -1,6 +1,6 @@
 
-import { ICreateProduct } from "./interfaces/product/product.interface";
-import { Product } from "./products.mongoose";
+import { ICreateProduct } from './interfaces/product/product.interface';
+import { Product } from './products.mongoose';
 
 export default class ProductService {
 
