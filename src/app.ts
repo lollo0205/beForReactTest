@@ -19,7 +19,7 @@ const app: FastifyPluginAsync<AppOptions> = async (
   void fastify.register(AutoLoad, {
     dir: join(__dirname, 'plugins'),
     options: opts
-  })
+  });
 
   // This loads all plugins defined in routes
   // define your routes in one of these
@@ -31,7 +31,7 @@ const app: FastifyPluginAsync<AppOptions> = async (
       indexPattern: new RegExp('.route.js'),
 
     }
-  })
+  });
   process.on('exit', async () => {
     fastify.log.info('About to exit');
     await db.disconnect();
@@ -41,4 +41,4 @@ const app: FastifyPluginAsync<AppOptions> = async (
 };
 
 export default app;
-export { app }
+export { app };

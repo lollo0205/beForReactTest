@@ -36,7 +36,7 @@ class ProductSchema {
                 return {
                     type: 'object',
                     properties: {
-                        "type": { type: 'string' },
+                        'type': { type: 'string' },
                         image: { type: 'string' },
                         price: { type: 'number' },
                         name: { type: 'string' },

@@ -1,4 +1,4 @@
-import { FastifySchema } from "fastify/types/schema";
+import { FastifySchema } from 'fastify/types/schema';
 export declare const productFindIdSchema: FastifySchema;
 export declare const getAllProduct: FastifySchema;
 export default class ProductSchema {
