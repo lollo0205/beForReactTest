@@ -8,11 +8,12 @@
   },
   "scripts": {
     "test": "npm run build:ts && tsc -p test/tsconfig.test.json && tap test/**/*.test.ts",
-    "start": "npm run build:ts && fastify start -l info -p process.env.PORT dist/app.js",
+    "start": " npm run build && fastify start -l info -p process.env.PORT dist/app.js",
     "start:heroku": "fastify start -l  info -p process.env.PORT -a '0.0.0.0' dist/app.js",
     "lint": "tsc --noEmit && eslint --ext .js,.jsx,.ts,.tsx ./src",
     "lint:fix": "tsc --noEmit && eslint --ext .js,.jsx,.ts,.tsx ./src --fix",
     "build:ts": "tsc",
+    "build": "npm run lint && npm run build:ts",
     "dev": "tsc && concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\"  \"tsc -w\" \"fastify start -w -l info -P dist/app.js\""
   },
   "keywords": [],
