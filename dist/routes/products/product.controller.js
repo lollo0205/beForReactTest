@@ -1,6 +1,9 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const product_service_1 = require("./product.service");
+const product_service_1 = __importDefault(require("./product.service"));
 class ProductController {
     constructor(productServie = new product_service_1.default()) {
         Object.defineProperty(this, "productServie", {
