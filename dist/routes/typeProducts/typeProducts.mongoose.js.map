@@ -1,0 +1,1 @@
+{"version":3,"file":"typeProducts.mongoose.js","sourceRoot":"","sources":["../../../src/routes/typeProducts/typeProducts.mongoose.ts"],"names":[],"mappings":";;;AAAA,uCAAyC;AAE5B,QAAA,wBAAwB,GAAG,IAAI,iBAAM,CAAC;IACjD,IAAI,EAAE,EAAE,IAAI,EAAE,MAAM,EAAE,QAAQ,EAAE,IAAI,EAAE;CAEvC,CAAC,CAAC;AACU,QAAA,YAAY,GAAG,IAAA,gBAAK,EAAC,eAAe,EAAE,gCAAwB,CAAC,CAAC"}

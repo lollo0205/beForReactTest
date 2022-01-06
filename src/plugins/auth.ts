@@ -20,17 +20,23 @@ export default fp<FastifyOAuth2Options>(async (fastify) => {
       auth: fastifyOauth2.GITHUB_CONFIGURATION
     },
     callbackUri: 'http://localhost:3002/auth/github/callback',
-
+    // generateStateFunction: (a: any, b: any) => {
+    //   console.log(a);
+    //   console.log(b);
+    // },
+    // checkStateFunction: (a: any, b: any) => {
+    //   console.log(a);
+    //   console.log(b);
+    // },
     startRedirectPath: '/auth/github',
   });
-
   fastify.register(fastifyOauth2, {
     name: 'googleOauth2',
     scope: ['profile', 'email'],
     credentials: {
       client: {
-        id: '686527754072-hnrugancj0of3na9h55se6e3hgdplffu.apps.googleusercontent.com',
-        secret: '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',
+        id: '756691322597-sb4tf1pos3f561ul0ka8aegbv4uko2n3.apps.googleusercontent.com',
+        secret: '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',
       },
       auth: fastifyOauth2.GOOGLE_CONFIGURATION
     },

@@ -1,7 +1,7 @@
 import { join } from 'path';
 import AutoLoad, { AutoloadPluginOptions } from 'fastify-autoload';
 import { FastifyPluginAsync } from 'fastify';
-// import { connect } from 'mongoose';
+import { connect } from 'mongoose';
 export type AppOptions = {
   // Place your custom options for app below here.
 } & Partial<AutoloadPluginOptions>;
@@ -11,7 +11,7 @@ const app: FastifyPluginAsync<AppOptions> = async (
   opts
 ): Promise<void> => {
   // Place here your custom code!
-  // const db = await connect(process.env.MONGODB_URL_CONNECTION || '');
+  const db = await connect(process.env.MONGODB_URL_CONNECTION || '');
   // Do not touch the following lines
   // This loads all plugins defined in plugins
   // those should be support plugins that are reused
@@ -20,7 +20,6 @@ const app: FastifyPluginAsync<AppOptions> = async (
     dir: join(__dirname, 'plugins'),
     options: opts
   });
-  console.log('dopo plug');
   // This loads all plugins defined in routes
   // define your routes in one of these
   void fastify.register(AutoLoad, {
@@ -34,7 +33,7 @@ const app: FastifyPluginAsync<AppOptions> = async (
   });
   process.on('exit', async () => {
     fastify.log.info('About to exit');
-    // await db.disconnect();
+    await db.disconnect();
     fastify.log.info('disconnect to mongoose');
     process.exit();
   });

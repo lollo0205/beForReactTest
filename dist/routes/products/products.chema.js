@@ -113,3 +113,4 @@ class ProductSchema {
     }
 }
 exports.default = ProductSchema;
+//# sourceMappingURL=products.chema.js.map

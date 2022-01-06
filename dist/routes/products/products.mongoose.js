@@ -10,3 +10,4 @@ exports.ProductsEntitySchema = new mongoose_1.Schema({
     qtaStock: { type: Number, required: true }
 });
 exports.Product = (0, mongoose_1.model)('products', exports.ProductsEntitySchema);
+//# sourceMappingURL=products.mongoose.js.map

@@ -24,8 +24,8 @@ exports.default = (0, fastify_plugin_1.default)(async (fastify) => {
         scope: ['profile', 'email'],
         credentials: {
             client: {
-                id: '686527754072-hnrugancj0of3na9h55se6e3hgdplffu.apps.googleusercontent.com',
-                secret: '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',
+                id: '756691322597-sb4tf1pos3f561ul0ka8aegbv4uko2n3.apps.googleusercontent.com',
+                secret: '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',
             },
             auth: fastify_oauth2_1.default.GOOGLE_CONFIGURATION
         },
@@ -33,3 +33,4 @@ exports.default = (0, fastify_plugin_1.default)(async (fastify) => {
         startRedirectPath: '/auth/google',
     });
 });
+//# sourceMappingURL=auth.js.map

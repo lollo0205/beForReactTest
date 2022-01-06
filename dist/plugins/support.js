@@ -9,3 +9,4 @@ exports.default = (0, fastify_plugin_1.default)(async (fastify, opts) => {
         return 'hugs';
     });
 });
+//# sourceMappingURL=support.js.map

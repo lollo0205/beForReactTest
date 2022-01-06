@@ -11,3 +11,4 @@ const typeProducts = async (fastify) => {
     });
 };
 exports.default = typeProducts;
+//# sourceMappingURL=typeProducts.route.js.map

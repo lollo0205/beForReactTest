@@ -13,3 +13,4 @@ const products = async (fastify, opts) => {
     fastify.get('/:productId', { schema: productSchema.productFindIdSchema() }, productController.getProductById);
 };
 exports.default = products;
+//# sourceMappingURL=products.route.js.map
