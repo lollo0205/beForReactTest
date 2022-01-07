@@ -13,7 +13,6 @@ const app = async (fastify, opts) => {
         dir: (0, path_1.join)(__dirname, 'plugins'),
         options: opts
     });
-    console.log('dopo plug');
     void fastify.register(fastify_autoload_1.default, {
         dir: (0, path_1.join)(__dirname, 'routes'),
         indexPattern: new RegExp('.route.js'),

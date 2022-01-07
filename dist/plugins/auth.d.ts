@@ -4,7 +4,6 @@ declare const _default: import("fastify").FastifyPluginAsync<FastifyOAuth2Option
 export default _default;
 declare module 'fastify' {
     interface FastifyInstance {
-        githubOauth2: OAuth2Namespace;
-        googleOauth2: OAuth2Namespace;
+        google: OAuth2Namespace;
     }
 }
